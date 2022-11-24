@@ -12,6 +12,12 @@ const typeDefs = gql`
   type Query {
     welcome: String
     getTodos: [Todo]
+    getTodo(id: ID): Todo
+  }
+
+  type Mutation {
+    addTodo(title: String, detail: String, date: Date): Todo
+    deleteTodo(id: ID): String
   }
 `;
 

@@ -5,6 +5,10 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const { ApolloServer, gql } = require("apollo-server-express");
+const {
+  ApolloServerPluginLandingPageGraphQLPlayground,
+  ApolloServerPluginLandingPageDisabled,
+} = require("apollo-server-core");
 const { PORT, MONGO_URI } = require("./config");
 const typeDefs = require("./grapghql/typeDefs");
 const resolvers = require("./grapghql/resolvers");
@@ -28,12 +32,15 @@ app.use(
 );
 
 const initServer = async () => {
-  const apolloServer = new ApolloServer({ typeDefs, resolvers });
+  const apolloServer = new ApolloServer({
+    typeDefs,
+    resolvers,
+    plugins: [
+      ApolloServerPluginLandingPageGraphQLPlayground({}),
+    ],
+  });
   await apolloServer.start();
   apolloServer.applyMiddleware({ app });
-  app.use((req, res) => {
-    res.send("Server Started");
-  });
 
   // DB Connection
   mongoose
