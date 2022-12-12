@@ -27,4 +27,4 @@ sequelize db:seed:all
 
 3. `_current_bak.json` this file is create in case that an existing `_current.json` file is being updated; it contains a backup from the last version before the update.
 
-<img src="https://www.aiactive.com/templates/hexa_corp/images/s5_logo.png" alt="drawing" width="200"/>
+<img src="https://www.aiactive.com/templates/hexa_corp/images/s5_logo.png" alt="drawing" width="100"/>
