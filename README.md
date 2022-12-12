@@ -26,5 +26,5 @@ sequelize db:seed:all
 2. `_current.json` file is created in the first time to hold all the tables and its schema in `json` format then new migrations update this file to adapt with the changes; at the end of the file we will find the revision number and that number represents the latest migration.
 
 3. `_current_bak.json` this file is create in case that an existing `_current.json` file is being updated; it contains a backup from the last version before the update.
-
+###
 <img src="https://www.aiactive.com/templates/hexa_corp/images/s5_logo.png" alt="drawing" width="100"/>
